@@ -10,4 +10,4 @@ const maybeGetToken = (sessionName: string) =>
     setup: getToken,
     shareAcrossSpecs: true
   })
-  Cypress.Commands.add('maybeGetToken', maybeGetToken)
+Cypress.Commands.add('maybeGetToken', maybeGetToken)
