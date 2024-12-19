@@ -7,7 +7,7 @@ const scriptDir = path.resolve(__dirname)
 
 /* Convert to YAML */
 const yamlDoc = stringify(openApiDoc)
-fs.writeFileSync(`${scriptDir}/openapi.yaml`, yamlDoc)
+fs.writeFileSync(`${scriptDir}/openapi.yml`, yamlDoc)
 console.log('OpenAPI spec generated in YAML format')
 
 /* Convert to JSON */

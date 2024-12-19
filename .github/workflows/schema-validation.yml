@@ -33,7 +33,7 @@ jobs:
       - name: Check if openApi docs have changed
         id: check_changes
         run: |
-          if git diff --quiet src/api-docs/openapi.yaml src/api-docs/openapi.json; then
+          if git diff --quiet src/api-docs/openapi.yml src/api-docs/openapi.json; then
            echo "changes=false" >> $GITHUB_ENV
           else
            echo "changes=true" >> $GITHUB_ENV
@@ -46,7 +46,7 @@ jobs:
           author_name: 'GitHub Actions'
           author_email: 'actions@github.com'
           message: 'chore: update OpenApi spec'
-          add: 'src/api-docs/openapi.yaml src/api-docs/openapi.json'
+          add: 'src/api-docs/openapi.yml src/api-docs/openapi.json'
           push: true
           github_token: ${{ secrets.PAT_TOKEN }}
     
