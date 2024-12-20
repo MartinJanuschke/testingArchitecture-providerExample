@@ -10,11 +10,13 @@ server.use(
 
 server.use(json())
 
-server.get('/', (_, res): void => {res.status(200).json({message:'Server is running'})})
-
-server.use('/auth/fake-token', (_, res) => {
-    const token = `Bearer ${new Date().toISOString()}`
-    return res.status(200).json({token, status: 200})
+server.get('/', (_, res): void => {
+  res.status(200).json({ message: 'Server is running' })
 })
 
-export {server}
+server.use('/auth/fake-token', (_, res) => {
+  const token = `Bearer ${new Date().toISOString()}`
+  return res.status(200).json({ token, status: 200 })
+})
+
+export { server }
